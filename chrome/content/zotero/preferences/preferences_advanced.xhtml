@@ -179,6 +179,12 @@
 					preference="extensions.zotero.keys.copySelectedItemsToClipboard"
 					oninput="if (Zotero_Preferences.Export) { Zotero_Preferences.Export.updateQuickCopyInstructions(); }"/>
 
+			<html:label for="textbox-alternateCopySelectedItemsToClipboard">&zotero.preferences.keys.copySelectedItemsToClipboard;</html:label>
+					<html:label class="modifier"/>
+					<html:input type="text" id="textbox-alternateCopySelectedItemsToClipboard" maxlength="1" size="1"
+							preference="extensions.zotero.keys.alternateCopySelectedItemsToClipboard"
+							oninput="if (Zotero_Preferences.Export) { Zotero_Preferences.Export.updateQuickCopyInstructions(); }"/>
+
 			<html:label for="textbox-toggleAllRead">&zotero.preferences.keys.toggleAllRead;</html:label>
 			<html:label class="modifier"/>
 			<html:input type="text" id="textbox-toggleAllRead" maxlength="1" size="1" preference="extensions.zotero.keys.toggleAllRead"/>

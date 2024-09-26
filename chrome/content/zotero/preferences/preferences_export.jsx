@@ -535,12 +535,14 @@ Zotero_Preferences.Export = {
 		var prefix = Zotero.isMac ? Zotero.getString('general.keys.cmdShift') : Zotero.getString('general.keys.ctrlShift');
 		
 		var key = Zotero.Prefs.get('keys.copySelectedItemsToClipboard');
+		var alternateKey = Zotero.Prefs.get('keys.alternateCopySelectedItemsToClipboard');
 		var str = Zotero.getString('zotero.preferences.export.quickCopy.instructions', prefix + key);
+		var str2 = Zotero.getString('zotero.preferences.export.quickCopy.alternateInstructions', prefix + alternateKey);
 		var instr = document.getElementById('quickCopy-instructions');
 		while (instr.hasChildNodes()) {
 			instr.removeChild(instr.firstChild);
 		}
-		instr.appendChild(document.createTextNode(str));
+		instr.appendChild(document.createTextNode(str + " " + str2));
 		
 		key = Zotero.Prefs.get('keys.copySelectedItemCitationsToClipboard');
 		str = Zotero.getString('zotero.preferences.export.quickCopy.citationInstructions', prefix + key);
