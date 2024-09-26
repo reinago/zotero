@@ -59,12 +59,17 @@ Zotero_Preferences.Export = {
 		var format = Zotero.Prefs.get("export.quickCopy.setting");
 		format = Zotero.QuickCopy.unserializeSetting(format);
 		var menulist = document.getElementById("zotero-quickCopy-menu");
+		var menulist2 = document.getElementById("zotero-quickCopy-menu2");
 		yield Zotero.Styles.init();
 		var translators = yield this.getQuickCopyTranslators();
 		this.buildQuickCopyFormatDropDown(
 			menulist, format.contentType, format, translators
 		);
 		menulist.setAttribute('preference', "extensions.zotero.export.quickCopy.setting");
+		this.buildQuickCopyFormatDropDown(
+			menulist2, format.contentType, format, translators
+		);
+		menulist2.setAttribute('preference', "extensions.zotero.export.quickCopy2.setting");
 		
 		// Initialize locale drop-down
 		var localeMenulist = document.getElementById("zotero-quickCopy-locale-menu");
