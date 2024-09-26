@@ -109,6 +109,9 @@
 		<command id="cmd_zotero_copyBibliography"
 				 oncommand="ZoteroPane_Local.copySelectedItemsToClipboard();"
 				 disabled="true"/>
+		<command id="cmd_zotero_alternateCopyBibliography"
+				 oncommand="ZoteroPane_Local.copySelectedItemsToClipboard(false, true);"
+				 disabled="true"/>
 		<command id="cmd_zotero_createTimeline" oncommand="Zotero_Timeline_Interface.loadTimeline();"/>
 		<command id="cmd_zotero_rtfScan" oncommand="window.openDialog('chrome://zotero/content/rtfScan.xhtml', 'rtfScan', 'chrome,centerscreen')"/>
 		<command id="cmd_zotero_newCollection" oncommand="ZoteroPane_Local.newCollection(ZoteroPane_Local.getSelectedCollection()?.key)"/>
@@ -165,6 +168,9 @@
 				modifiers="accel shift"/>
 		<key id="key_copyBibliography"
 				command="cmd_zotero_copyBibliography"
+				modifiers="accel shift"/>
+		<key id="key_alternateCopyBibliography"
+				command="cmd_zotero_alternateCopyBibliography"
 				modifiers="accel shift"/>
 		<key id="key_advancedSearch"
 				command="cmd_zotero_advancedSearch"
@@ -368,6 +374,11 @@
 									label="&copyBibliographyCmd.label;"
 									command="cmd_zotero_copyBibliography"
 									key="key_copyBibliography"
+									hidden="true"/>
+							<menuitem id="menu_alternateCopyBibliography"
+									label="&alternateCopyBibliographyCmd.label;"
+									command="cmd_zotero_alternateCopyBibliography"
+									key="key_alternateCopyBibliography"
 									hidden="true"/>
 							<menuitem id="menu_copyExport"
 									class="menu-type-library"

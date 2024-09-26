@@ -1397,6 +1397,7 @@ var ZoteroPane = new function()
 				// this.itemSelected()
 				case 'copySelectedItemCitationsToClipboard':
 				case 'copySelectedItemsToClipboard':
+				case 'alternateCopySelectedItemsToClipboard':
 					return;
 				
 				default:
@@ -2036,6 +2037,8 @@ var ZoteroPane = new function()
 		
 		document.getElementById('cmd_zotero_copyCitation').setAttribute('disabled', !canCopy);
 		document.getElementById('cmd_zotero_copyBibliography').setAttribute('disabled', !canCopy);
+		document.getElementById('cmd_zotero_alternateCopyBibliography').setAttribute('disabled', !canCopy);
+		console.log(document.getElementById('cmd_zotero_alternateCopyBibliography'))
 	};
 	
 	
@@ -2616,7 +2619,7 @@ var ZoteroPane = new function()
 	}
 	
 	
-	this.copySelectedItemsToClipboard = function (asCitations) {
+	this.copySelectedItemsToClipboard = function (asCitations = false, alternate = false) {
 		var items = [];
 		if (Zotero_Tabs.selectedID == 'zotero-pane') {
 			let itemIDs = this.getSelectedItems(true);
@@ -2641,6 +2644,10 @@ var ZoteroPane = new function()
 		var format = Zotero.QuickCopy.getFormatFromURL(Zotero.QuickCopy.lastActiveURL);
 		if (items.every(item => item.isNote() || item.isAttachment())) {
 			format = Zotero.QuickCopy.getNoteFormat();
+		}
+		if (alternate) {
+			console.log("fetching alternate")
+			format = Zotero.QuickCopy.getAlternateFormat();
 		}
 		format = Zotero.QuickCopy.unserializeSetting(format);
 		

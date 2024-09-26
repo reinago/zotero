@@ -167,6 +167,12 @@ Zotero.QuickCopy = new function() {
 		pref = JSON.stringify(this.unserializeSetting(pref));
 		return pref;
 	};
+
+	this.getAlternateFormat = function () {
+		var pref = Zotero.Prefs.get('export.quickCopy2.setting');
+		pref = JSON.stringify(this.unserializeSetting(pref));
+		return pref;
+	}
 	
 	this.getFormatFromURL = function(url) {
 		var quickCopyPref = Zotero.Prefs.get("export.quickCopy.setting");
