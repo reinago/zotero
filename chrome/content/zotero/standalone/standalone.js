@@ -97,6 +97,9 @@ const ZoteroStandalone = new function() {
 				.setAttribute('key', Zotero.Keys.getKeyForCommand('copySelectedItemCitationsToClipboard'));
 			document.getElementById('key_copyBibliography')
 				.setAttribute('key', Zotero.Keys.getKeyForCommand('copySelectedItemsToClipboard'));
+			document.getElementById('key_alternateCopyBibliography')
+				.setAttribute('key', Zotero.Keys.getKeyForCommand('alternateCopySelectedItemsToClipboard'));
+			
 			
 			ZoteroStandalone.DebugOutput.init();
 			

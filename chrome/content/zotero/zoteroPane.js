@@ -2038,7 +2038,6 @@ var ZoteroPane = new function()
 		document.getElementById('cmd_zotero_copyCitation').setAttribute('disabled', !canCopy);
 		document.getElementById('cmd_zotero_copyBibliography').setAttribute('disabled', !canCopy);
 		document.getElementById('cmd_zotero_alternateCopyBibliography').setAttribute('disabled', !canCopy);
-		console.log(document.getElementById('cmd_zotero_alternateCopyBibliography'))
 	};
 	
 	
@@ -2646,7 +2645,6 @@ var ZoteroPane = new function()
 			format = Zotero.QuickCopy.getNoteFormat();
 		}
 		if (alternate) {
-			console.log("fetching alternate")
 			format = Zotero.QuickCopy.getAlternateFormat();
 		}
 		format = Zotero.QuickCopy.unserializeSetting(format);
